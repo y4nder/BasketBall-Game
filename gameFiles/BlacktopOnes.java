@@ -1,3 +1,4 @@
+package gameFiles;
 public class BlacktopOnes {
     private int MAX_SCORE;
     private String gameDetails;

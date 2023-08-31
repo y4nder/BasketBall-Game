@@ -1,3 +1,4 @@
+package gameFiles;
 import java.util.Random;
 public class Player {
     private static int Default_VAL = 60;

@@ -1,3 +1,4 @@
+package gameFiles;
 import java.util.Scanner;
 public class PlayerList {
     static Scanner scan = new Scanner(System.in);
