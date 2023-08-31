@@ -1,1 +1,1 @@
-new basketball game
+To run the game go to "main.java"
