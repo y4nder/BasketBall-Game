@@ -1,1 +1,1 @@
-To run the game go to "main.java"
+To run the game go to "Main.java"
