@@ -40,7 +40,7 @@ public class Main {
                     editPlayer();
                     break;
                 case 'X':
-                    System.out.println("Exiting...");
+                    System.out.println("\n\nBye :< ....");
                     return;
             }
         }
@@ -81,15 +81,17 @@ public class Main {
     
     static boolean pickPlayers(){        
         String option;
-        int i = 1;
+        System.out.println("\n");
+        list.displayList();
+        System.out.println("[0] Back <-");
         while(game.gameIsSet() == false){
-            System.out.println("\n");
-            list.displayList();
-            System.out.println("[0] Back <-");
-            System.out.print("\nChoose Player" + (game.getPlayerCount() + 1) + " (1 - " + list.getCount() + ") : ");
+            System.out.print("\nCHOOSE PLAYER_" + (game.getPlayerCount() + 1) + " (1 - " + list.getCount() + ") : ");
+            System.out.println("Type the number only");
             option = scan.nextLine();
             if(option.equals("0")) return false;
-            game.setupGame(list.pickPlayer(Integer.parseInt(option)));
+            int op = Integer.parseInt(option);
+            game.setupGame(list.pickPlayer(op));
+            System.out.println("PLAYER " + (game.getPlayerCount()) +  " is " + list.getPlayer(op).getPlayerName());
         }
         return true;
     }
@@ -116,14 +118,15 @@ public class Main {
     }
 
     static void playerRemover(){
-        list.displayList();
-        if(list.getCount() == 0) return;
-        System.out.println("[0] Back <-");
-        System.out.print("Type the name of the player you want to remove: ");
         String name;
-        name = scan.nextLine();
-        if(name.equals("0")) return;
-        list.removePlayer(scan.nextLine());
+        do{
+            list.displayList();
+            if(list.getCount() == 0) return;
+            System.out.println("[0] Back <-");
+            System.out.print("Type the name of the player you want to remove: ");
+            name = scan.nextLine();
+            if(name.equals("0")) return;
+        }while(list.removePlayer(name) == false);
     }
 
     static void editPlayer(){

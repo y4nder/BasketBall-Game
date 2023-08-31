@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.Scanner;
 public class Player {
     private static int Default_VAL = 60;
     private static Random ran = new Random();

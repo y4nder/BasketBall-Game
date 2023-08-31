@@ -20,6 +20,7 @@ public class PlayerList {
 
     public int getCount(){ return counter; }
     public int getMAX(){ return MAX; }
+    public Player getPlayer(int index){ return pList[index - 1]; }
 
 
     public boolean createPlayer(String name){
@@ -117,7 +118,7 @@ public class PlayerList {
                 return true;
             }
         }
-        System.out.println("No such player.");
+        System.out.println("No such player.\n\n");
         return false;
     }
 
