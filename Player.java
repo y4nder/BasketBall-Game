@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 public class Player {
     private static int Default_VAL = 60;
     private static Random ran = new Random();
@@ -48,7 +49,7 @@ public class Player {
 
     //setters
     public void setPlayerName(String name){ playerName = name;}
-    private void setMidRange(int mid){ midRange = mid; }
+    public void setMidRange(int mid){ midRange = mid; }
     public void updateMidRange(int mid){ setMidRange(mid); }
     
     public void setThreePoint(int three){ threePoint = three; }
@@ -86,6 +87,7 @@ public class Player {
         return 0;
     }
 
+    
     //defense
 
 

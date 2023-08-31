@@ -24,6 +24,8 @@ public class BlacktopOnes {
         gameSet = false;
     }
 
+    public int getMAX(){ return MAX; }
+
     public String getGameDetails(){
         return gameDetails;
     }
