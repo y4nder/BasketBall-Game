@@ -107,7 +107,7 @@ public class Main {
     }
 
     static void startGame(){
-        System.out.println("Game is starting...");
+        System.out.println("\nGame is starting...");
         game.startNewGame();
         game.showHightlights();
         char option;
