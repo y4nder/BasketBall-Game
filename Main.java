@@ -1,9 +1,6 @@
 import java.util.Scanner;
 import gameFiles.*;
-/*
- The `Main` class is the main entry point of the program. It provides a menu-driven interface for creating and managing a 1v1 basketball game.
- The class interacts with the `PlayerList` and `BlacktopOnes` classes to create players, start games, and edit player attributes.
- */
+
 public class Main {
     static BlacktopOnes game;
     static PlayerList list = new PlayerList();
