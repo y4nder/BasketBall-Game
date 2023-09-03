@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import gameFiles.*;
+
 public class Main {
     static BlacktopOnes game;
     static PlayerList list = new PlayerList();

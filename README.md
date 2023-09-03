@@ -15,8 +15,6 @@ playerList.playerEditor(1);
 // Remove a player from the list
 playerList.removePlayer("Jordan");
 ```
-
-## Code Analysis
 ### Main functionalities
 - Create a list of basketball players with a maximum capacity.
 - Add players to the list with a specified name.
