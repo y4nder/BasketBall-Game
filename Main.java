@@ -135,9 +135,16 @@ public class Main {
         String option;
         System.out.println("\n ----------- EDIT PLAYERS ------------");
         list.displayList();
-        if(list.getCount() == 0) return;
+        if(list.getCount() == 0){
+            return;
+        }
+        else System.out.println("[X] Remove all Players...XXX");
         System.out.println("[0] Back <-");
         option = scan.nextLine();
+        if(option.equalsIgnoreCase("X")){
+            list.removAllPlayers();
+            return;
+        }
         if(option.equals("0")) return;
         int op = Integer.parseInt(option);
         if(op < 1 || op > 8) return;
