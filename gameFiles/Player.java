@@ -6,6 +6,7 @@ public class Player {
     private String playerName;
     private String detailedActions;
     private int score;
+    private int overall;
 
     //offense
     private int midRange;
@@ -28,6 +29,7 @@ public class Player {
         steal = Default_VAL; 
         rebound = Default_VAL;
         contest = Default_VAL;
+        overall = (midRange + threePoint + dunk + layUp + steal + rebound + contest) / 7;
         hasBall = false;
         detailedActions = "";
         score =  0;
@@ -49,26 +51,39 @@ public class Player {
 
     //setters
     public void setPlayerName(String name){ playerName = name;}
-    public void setMidRange(int mid){ midRange = mid; }
-    public void updateMidRange(int mid){ setMidRange(mid); }
-    
-    public void setThreePoint(int three){ threePoint = three; }
-
-    public void setSteal(int stl){ steal = stl;}
-    public void setRebound(int reb){ rebound = reb; }
+    public void setMidRange(int mid){ midRange = mid; updateOVR(); }
+    public void setDunk(int dunk){ this.dunk = dunk; updateOVR(); }
+    public void setLayUp(int layUp){ this.layUp = layUp; updateOVR(); }
+    public void setThreePoint(int three){ threePoint = three; updateOVR(); }
+    public void setSteal(int stl){ steal = stl; updateOVR();}
+    public void setRebound(int reb){ rebound = reb; updateOVR(); }
+    public void setContest(int contest){ this.contest = contest; updateOVR(); }
 
     public void setHasBall(boolean ball){ hasBall = ball; }
     public void setScore(int num){ score = num; }
     public void addScore(int num){ score += num; }
     public void resetDetail(){ detailedActions = ""; }
 
+    //overall updater
+    public void updateOVR(){
+        overall = (midRange + threePoint + dunk + layUp + steal + rebound + contest) / 7;
+    }
+
     //getters
     public String getPlayerName(){ return playerName; }
     public int getStealRt(){ return steal; }
     public int getContest() { return contest; }
+    public int getMidRange(){ return midRange; }
+    public int getThreePoint(){ return threePoint; }
+    public int getDunk(){ return dunk; }
+    public int getLayUp(){ return layUp; }
+    public int getSteal(){ return steal; }
+    public int getRebound(){ return rebound; }
+
     public boolean getHasBall(){ return hasBall; }
     public String getActionDetails(){ return detailedActions; }
     public int getScore(){ return score; }
+    public int getOverall(){ return overall; }
 
     //displayers
     private void detailBuilder(String message){ detailedActions += message; }
@@ -268,5 +283,21 @@ public class Player {
 
     public double getPct(){
         return Math.random()*100;
+    }
+
+    public void showPlayerInfo(){
+        System.out.println("\n-----" + getPlayerName() + " 's attributes-----");
+        System.out.println("name: " + getPlayerName());
+        System.out.println("midrange: " + getMidRange());
+        System.out.println("three point: " + getThreePoint());
+        System.out.println("Dunk: " + getDunk());
+        System.out.println("Lay Up: " + getLayUp());
+        System.out.println("Steal: " + getSteal());
+        System.out.println("Rebound: " + getRebound());
+        System.out.println("Contest: " + getContest());
+    }
+
+    public void showPlayerOverall(){
+        System.out.print("--- OVR " + getOverall() + "\n");
     }
 }

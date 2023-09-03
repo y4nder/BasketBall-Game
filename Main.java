@@ -10,6 +10,7 @@ public class Main {
         System.out.println("BLACKTOP 1v1 GAME");
         System.out.println("made by: YANDER\n\n");
         showMainMenu();
+        // System.out.println(list.getPlayer(1).getOverall());
         return;
     }
     
