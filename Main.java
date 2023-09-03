@@ -112,7 +112,7 @@ public class Main {
         game.showHightlights();
         char option;
         do{
-            System.out.print("Press 'X' to go back: ");
+            System.out.println("Press 'X' to go back: ");
             System.out.print("option > ");
             option = scan.nextLine().toUpperCase().charAt(0);
         }while(option != 'X');
