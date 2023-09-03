@@ -68,7 +68,6 @@ public class BlacktopOnes {
     public int getPlayerCount(){ return counter; }
 
     public Player startNewGame(){
-        System.out.println("playing..");
         gameDetails = "";
         p[0].setScore(0);
         p[1].setScore(0);

@@ -157,6 +157,16 @@ public class PlayerList {
         return false;
     }
 
+    public boolean removAllPlayers(){
+        if(counter == 0){
+            System.out.println("No Players to remove");
+            return false;
+        }
+        counter = 0;
+        System.out.println("All players removed");
+        return true;
+    }
+
     private void remove(int index){
         for(int i = index; i < counter - 1; i++){
             pList[i] = pList[i + 1];

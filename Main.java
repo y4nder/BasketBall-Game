@@ -107,12 +107,12 @@ public class Main {
     }
 
     static void startGame(){
-        System.out.println("Game is starting...");
+        System.out.println("\nGame is starting...");
         game.startNewGame();
         game.showHightlights();
         char option;
         do{
-            System.out.print("Press 'X' to go back: ");
+            System.out.println("Press 'X' to go back: ");
             System.out.print("option > ");
             option = scan.nextLine().toUpperCase().charAt(0);
         }while(option != 'X');
@@ -135,9 +135,16 @@ public class Main {
         String option;
         System.out.println("\n ----------- EDIT PLAYERS ------------");
         list.displayList();
-        if(list.getCount() == 0) return;
+        if(list.getCount() == 0){
+            return;
+        }
+        else System.out.println("[X] Remove all Players...XXX");
         System.out.println("[0] Back <-");
         option = scan.nextLine();
+        if(option.equalsIgnoreCase("X")){
+            list.removAllPlayers();
+            return;
+        }
         if(option.equals("0")) return;
         int op = Integer.parseInt(option);
         if(op < 1 || op > 8) return;
