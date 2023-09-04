@@ -2,6 +2,27 @@
 ## Summary
 The `Player` class represents a player in a game. It has fields to store player attributes such as midRange, threePoint, dunk, layUp, steal, rebound, and contest. It also has methods to set and get these attributes, as well as methods for offense and defense actions such as shooting, stealing, and rebounding.
 
+## SHOT MECHANICS
+The players shooting is affected by the players attributes. A random number is generated emulating a dice roll, if the number generated is in range with the attribute then the shot is succesful, otherwhise fails.
+```java
+    //shooting mechanic
+    private int shoot(Player p2, String shotType, int rating, int cntstRate, int points){ 
+        int contestRating;
+        if(cntstRate != 0)
+            contestRating = cntstRate;
+        else contestRating = 0;
+
+        ShotStrategy strategy;
+        if((getPct() - ( rating - (contestRating * 0.2) ) ) < 0){
+            strategy = new MadeShotStrategy();
+        }
+        else {
+            strategy = new MissedShotStrategy();
+        }
+        return strategy.shoot(p2, shotType,points);
+    }
+```
+
 ## Example Usage
 ```java
 Player player1 = new Player("Lebron");
